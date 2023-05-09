@@ -6,7 +6,7 @@ function calculateGamma(data) {
     const gamma = (item.Ash * item.Hue) / item.Magnesium;
     return {
       ...item,
-      Gamma: gamma,
+      Gamma: Number(gamma.toFixed(3)),
     };
   });
 }
@@ -47,7 +47,7 @@ function calculateClassWiseStats(data, className) {
   return {
     mean: mean.toFixed(3),
     median: median.toFixed(3),
-    mode: mode.toFixed(3),
+    mode: mode,
   };
 }
 
